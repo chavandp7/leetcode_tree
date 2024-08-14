@@ -1,4 +1,7 @@
-class TreeNode:
+from basics.TreeNode import TreeNode
+
+
+class DFS_Traversal:
     def __init__(self, val: int, left: 'TreeNode' = None, right: 'TreeNode' = None) -> None:
         self.val = val
         self.left = left
@@ -11,8 +14,8 @@ class TreeNode:
             return
 
         print(root.val, end=' ')
-        TreeNode.preorder_dfs(root.left)
-        TreeNode.preorder_dfs(root.right)
+        DFS_Traversal.preorder_dfs(root.left)
+        DFS_Traversal.preorder_dfs(root.right)
 
     # Left - Root - Right
     @staticmethod
@@ -20,17 +23,17 @@ class TreeNode:
         if not root:
             return
 
-        TreeNode.inorder_dfs(root.left)
+        DFS_Traversal.inorder_dfs(root.left)
         print(root.val, end=' ')
-        TreeNode.inorder_dfs(root.right)
+        DFS_Traversal.inorder_dfs(root.right)
 
     # Root - Left - Right
     @staticmethod
     def postorder_dfs(root: 'TreeNode') -> None:
         if not root:
             return
-        TreeNode.postorder_dfs(root.left)
-        TreeNode.postorder_dfs(root.right)
+        DFS_Traversal.postorder_dfs(root.left)
+        DFS_Traversal.postorder_dfs(root.right)
         print(root.val, end=' ')
 
 
@@ -59,13 +62,13 @@ if __name__ == "__main__":
     four.right = six
 
     print("preorder traversal")
-    TreeNode.preorder_dfs(root)
+    DFS_Traversal.preorder_dfs(root)
     print()
 
     print("inorder traversal")
-    TreeNode.inorder_dfs(root)
+    DFS_Traversal.inorder_dfs(root)
     print()
 
     print("postorder traversal")
-    TreeNode.postorder_dfs(root)
+    DFS_Traversal.postorder_dfs(root)
     print()
